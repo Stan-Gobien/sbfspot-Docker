@@ -1,0 +1,22 @@
+version: '3'
+services:
+    sbfspot:
+        image: nakla/sbfspot:latest
+        network_mode: host
+        volumes:
+            - /data/containers/sbfspot/config:/etc/sbfspot
+            - /data/containers/sbfspot/data:/var/sbfspot
+        environment:
+            TZ: Europe/Brussels
+            ENABLE_SBFSPOT: 1
+            SBFSPOT_INTERVAL: 300
+            ENABLE_SBFSPOT_UPLOAD: 1
+            DB_STORAGE: sqlite
+            CSV_STORAGE: 1
+            MQTT_ENABLE: 1
+            QUIET: 0
+            SBFSPOT_ARGS: -ad7 -am1 -ae1 -v2 -sp0
+            INIT_DB: 0
+        restart: always
+        labels:
+             - "com.centurylinklabs.watchtower.enable=true"    
