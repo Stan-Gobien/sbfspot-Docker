@@ -2,7 +2,7 @@
 
 Docker compose file for my SBFspot stack.
 
-You will need to adjust the sbfspot.cfg file to your needs
+You will need to adjust the sbfspot.cfg file to your needs (see: https://github.com/SBFspot )
 
 The volume with the CSV files will get mounted RO in the PVdiary2 stack.
 
